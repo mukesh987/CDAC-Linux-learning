@@ -1,0 +1,98 @@
+Assignment 1
+
+
+1. Find out the username/userid on your machine. 
+
+Ans.$ whoami
+	diffstand
+	$ id
+	uid=1000(diffstand) gid=1000(diffstand) groups=1000(diffstand),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)
+
+2. How to print the present working directory path?
+
+Ans.$ pwd 
+
+3. How to go to a given directory (change the directory)? 
+
+Ans.$ cd <directoryaddress>
+
+4.What is the command to view the information about a Linux/Unix command? Try to know about the commands “ls”. 
+
+Ans. $ man ls
+
+5.View the man page for command ‘id’ and find the options for printing all the groups associated to a user with name. 
+
+Ans. $ id -Gn
+
+6. Create a file called “ctest”. Modify the access permissions as: “user - rwx”, “group -rx”, and “others - nothing”.
+
+Ans.$ touch ctest
+	$ chmod 750 ctest
+
+7(a). Create a 3 level directory in your home directory as shown in the structure below with single command.
+mydir
+|
+Subdir1
+|
+Subdir2 
+
+
+Ans.$ mkdir -p mydir/subdir1/subdir2
+
+7(b).Now move the whole directory i.e. mydir to mydir1 and change the permissions as owner-rwx, group-rx, others-x. 
+
+Ans.$ mkdir mydir1
+    $ mv mydir mydir1
+    $ ls
+    $ chmod 751 mydir1/
+    $ ls –l
+
+8.  Create a text file using an editor with content as:
+	Welcome to ACTS courses.
+	First day is about Linux.
+	It’s a very commonly used OS.
+	Simple to understand and work.
+	Many os are based on LINUX.
+	All linux OS are open source and freely available.
+
+8(a). From the file get the count of word “Linux” it must also include LINUX while counting.
+
+Ans. $ vi file.txt 
+	(a)$ grep  -c  -eLinux -eLINUX  file.txt
+
+
+8(b). Display lines that exactly have the word ‘OS’. 
+
+Ans(b).$ grep OS file.txt
+8(c). Display the line number where appears word ‘Linux’ 
+	  irrespective of case 
+
+Ans(c).$ grep –in Linux file.txt
+
+9.Create sample files ending with “.txt” in your directory. Now run a command to list all the files ending with “txt”.
+
+Ans. $ ls|grep .txt
+
+10.Create a file “test” in the directory /home/cdac/mydir1/subdir1/test. Go to the home directory and now find the file “test” executing the appropriate command. 
+
+Ans.$ find  /home  –name test
+
+11.From home directory list all the files including the hidden files. 
+
+Ans.$ ls –a
+
+12.Create a file with the following content:
+You absolutely must run these exercises in the bash shell, or results will not be as expected.
+	1. Display first 2 lines from the file.
+	Ans: $ head -2  file.txt
+	2. Display last 2 lines from the file.
+	Ans: $ tail -2  file.txt
+	3. Display exactly the tenth line in the file. 
+	Ans: $ head -10 sample.txt|tail-1
+
+13.Create a set of 3 files and tar them to myfirst.tar. Untar the tar file myfirst.tar and check the extracted files. 
+
+Ans. $ mkdir tarfile
+	 $ mkdir  –p tarfile/1st tarfile/2nd tarfile/3rd
+     $ tar –cvf myfirst.tar  tarfile
+     $ tar –xvf myfirst.tar
